@@ -10,20 +10,20 @@ import type { FeatureTab, VeoOperationContext } from './types';
 import { Github } from 'lucide-react';
 
 const App: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<FeatureTab>('Image Generation');
+  const [activeTab, setActiveTab] = useState<FeatureTab>('Generowanie Obrazów');
   const [veoContext, setVeoContext] = useState<VeoOperationContext | null>(null);
 
   const renderActiveTab = () => {
     switch (activeTab) {
-      case 'Image Generation':
+      case 'Generowanie Obrazów':
         return <ImageGenerationTab />;
-      case 'Image Editing':
+      case 'Edycja Obrazów':
         return <ImageEditingTab />;
-      case 'Image Analysis':
+      case 'Analiza Obrazów':
         return <ImageAnalysisTab />;
-      case 'Video Generation':
+      case 'Generowanie Video':
         return <VideoGenerationTab setVeoContext={setVeoContext} />;
-      case 'Video Continuation':
+      case 'Kontynuacja Video':
         return <VideoContinuationTab veoContext={veoContext} setVeoContext={setVeoContext} />;
       default:
         return <ImageGenerationTab />;
@@ -38,7 +38,7 @@ const App: React.FC = () => {
       </main>
        <footer className="w-full bg-black/50 backdrop-blur-sm border-t border-blue-500/60 py-4 text-center text-sm text-gray-400">
         <div className="container mx-auto flex justify-center items-center space-x-4">
-            <p>Powered by Google Gemini</p>
+            <p>Napêdzane przez Google Gemini</p>
             <a href="https://github.com/google/generative-ai-docs" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">
                 <Github size={20} />
             </a>
@@ -49,6 +49,8 @@ const App: React.FC = () => {
 };
 
 export default App;
+
+
 
 
 

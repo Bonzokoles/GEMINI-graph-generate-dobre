@@ -36,7 +36,7 @@ export const VideoGenerationTab: React.FC<VideoGenerationTabProps> = ({ setVeoCo
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!prompt && !uploadedFile) {
-      setError('Please enter a prompt or upload an image.');
+      setError('Proszê wpisaæ opis or upload an image.');
       return;
     }
     setIsLoading(true);
@@ -100,7 +100,7 @@ export const VideoGenerationTab: React.FC<VideoGenerationTabProps> = ({ setVeoCo
             id="video-prompt"
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
-            placeholder="e.g., A neon hologram of a cat driving at top speed"
+            placeholder="np., A neon hologram of a cat driving at top speed"
             className="w-full p-3 bg-gray-800 border-2 border-gray-700 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-colors"
             rows={3}
           />
@@ -118,7 +118,7 @@ export const VideoGenerationTab: React.FC<VideoGenerationTabProps> = ({ setVeoCo
           disabled={isLoading}
           className="w-full flex items-center justify-center bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors disabled:bg-gray-600 disabled:cursor-not-allowed"
         >
-          {isLoading ? <LoadingSpinner message={loadingMessage} /> : <><Clapperboard className="mr-2" size={18}/> Generate Video</>}
+          {isLoading ? <LoadingSpinner message={loadingMessage} /> : <><Clapperboard className="mr-2" size={18}/> Generuj Video</>}
         </button>
       </form>
 
@@ -133,4 +133,5 @@ export const VideoGenerationTab: React.FC<VideoGenerationTabProps> = ({ setVeoCo
     </div>
   );
 };
+
 

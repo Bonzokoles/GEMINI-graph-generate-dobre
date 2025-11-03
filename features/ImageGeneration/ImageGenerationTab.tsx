@@ -17,7 +17,7 @@ export const ImageGenerationTab: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!prompt) {
-      setError('Please enter a prompt.');
+      setError('Proszê wpisaæ opis.');
       return;
     }
     setIsLoading(true);
@@ -45,7 +45,7 @@ export const ImageGenerationTab: React.FC = () => {
             id="prompt"
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
-            placeholder="e.g., A cinematic shot of a raccoon in a library, surrounded by glowing books"
+            placeholder="np., A cinematic shot of a raccoon in a library, surrounded by glowing books"
             className="w-full p-3 bg-gray-800 border-2 border-gray-700 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-colors"
             rows={3}
           />
@@ -63,7 +63,7 @@ export const ImageGenerationTab: React.FC = () => {
           disabled={isLoading}
           className="w-full flex items-center justify-center bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors disabled:bg-gray-600 disabled:cursor-not-allowed"
         >
-          {isLoading ? <LoadingSpinner message="Generating..." /> : <><Wand2 className="mr-2" size={18} /> Generate Image</>}
+          {isLoading ? <LoadingSpinner message="Generating..." /> : <><Wand2 className="mr-2" size={18} /> Generuj Obraz</>}
         </button>
       </form>
 
@@ -78,4 +78,5 @@ export const ImageGenerationTab: React.FC = () => {
     </div>
   );
 };
+
 

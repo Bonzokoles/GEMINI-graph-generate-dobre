@@ -11,20 +11,20 @@ export const ImageEditingTab: React.FC = () => {
   const [uploadedFile, setUploadedFile] = useState<UploadedFile | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [editedImageUrl, setEditedImageUrl] = useState<string | null>(null);
+  const [EdytowanyImageUrl, setEdytowanyImageUrl] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!prompt || !uploadedFile) {
-      setError('Please upload an image and enter a prompt.');
+      setError('Proszê przes³aæ obraz and enter a prompt.');
       return;
     }
     setIsLoading(true);
     setError(null);
-    setEditedImageUrl(null);
+    setEdytowanyImageUrl(null);
     try {
       const url = await editImage(prompt, uploadedFile);
-      setEditedImageUrl(url);
+      setEdytowanyImageUrl(url);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An unknown error occurred.');
       console.error(err);
@@ -40,7 +40,7 @@ export const ImageEditingTab: React.FC = () => {
             uploadedFile={uploadedFile}
             setUploadedFile={setUploadedFile}
             onFileUpload={(file) => setUploadedFile(file)}
-            label="Upload Image to Edit"
+            label="Przeœlij Obraz do Edycji"
         />
         
         <div>
@@ -51,7 +51,7 @@ export const ImageEditingTab: React.FC = () => {
             id="edit-prompt"
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
-            placeholder="e.g., Change the background to a futuristic city, add a retro filter"
+            placeholder="np., Change the background to a futuristic city, add a retro filter"
             className="w-full p-3 bg-gray-800 border-2 border-gray-700 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-colors"
             rows={3}
           />
@@ -62,25 +62,26 @@ export const ImageEditingTab: React.FC = () => {
           disabled={isLoading || !uploadedFile}
           className="w-full flex items-center justify-center bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors disabled:bg-gray-600 disabled:cursor-not-allowed"
         >
-          {isLoading ? <LoadingSpinner message="Editing..." /> : <><BotMessageSquare className="mr-2" size={18}/> Edit Image</>}
+          {isLoading ? <LoadingSpinner message="Editing..." /> : <><BotMessageSquare className="mr-2" size={18}/> Edytuj Obraz</>}
         </button>
       </form>
 
       {error && <div className="mt-4 text-center text-red-400 bg-red-900/50 p-3 rounded-lg">{error}</div>}
       
-      {editedImageUrl && (
+      {EdytowanyImageUrl && (
           <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                  <h3 className="text-lg font-semibold text-center mb-2">Original</h3>
-                  <img src={uploadedFile?.preview} alt="Original" className="rounded-lg w-full"/>
+                  <h3 className="text-lg font-semibold text-center mb-2">Oryginalny</h3>
+                  <img src={uploadedFile?.preview} alt="Oryginalny" className="rounded-lg w-full"/>
               </div>
               <div>
-                  <h3 className="text-lg font-semibold text-center mb-2">Edited</h3>
-                  <img src={editedImageUrl} alt="Edited" className="rounded-lg w-full"/>
+                  <h3 className="text-lg font-semibold text-center mb-2">Edytowany</h3>
+                  <img src={EdytowanyImageUrl} alt="Edytowany" className="rounded-lg w-full"/>
               </div>
           </div>
       )}
     </div>
   );
 };
+
 

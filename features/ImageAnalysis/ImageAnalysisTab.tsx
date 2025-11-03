@@ -15,7 +15,7 @@ export const ImageAnalysisTab: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!uploadedFile) {
-      setError('Please upload an image to analyze.');
+      setError('Proszê przes³aæ obraz to analyze.');
       return;
     }
     setIsLoading(true);
@@ -39,7 +39,7 @@ export const ImageAnalysisTab: React.FC = () => {
             uploadedFile={uploadedFile}
             setUploadedFile={setUploadedFile}
             onFileUpload={(file) => setUploadedFile(file)}
-            label="Upload Image to Analyze"
+            label="Przeœlij Obraz do Analizy"
         />
 
         <button
@@ -47,7 +47,7 @@ export const ImageAnalysisTab: React.FC = () => {
           disabled={isLoading || !uploadedFile}
           className="w-full flex items-center justify-center bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors disabled:bg-gray-600 disabled:cursor-not-allowed"
         >
-          {isLoading ? <LoadingSpinner message="Analyzing..." /> : <><ScanSearch className="mr-2" size={18}/> Analyze Image</>}
+          {isLoading ? <LoadingSpinner message="Analyzing..." /> : <><ScanSearch className="mr-2" size={18}/> Analizuj Obraz</>}
         </button>
       </form>
 
@@ -62,4 +62,5 @@ export const ImageAnalysisTab: React.FC = () => {
     </div>
   );
 };
+
 

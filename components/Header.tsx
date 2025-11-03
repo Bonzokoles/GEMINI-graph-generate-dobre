@@ -10,11 +10,11 @@ interface HeaderProps {
 }
 
 const TABS: { name: FeatureTab; icon: React.ElementType }[] = [
-  { name: 'Image Generation', icon: Image },
-  { name: 'Image Editing', icon: BotMessageSquare },
-  { name: 'Image Analysis', icon: ScanSearch },
-  { name: 'Video Generation', icon: Clapperboard },
-  { name: 'Video Continuation', icon: Film },
+  { name: 'Generowanie Obrazów', icon: Image },
+  { name: 'Edycja Obrazów', icon: BotMessageSquare },
+  { name: 'Analiza Obrazów', icon: ScanSearch },
+  { name: 'Generowanie Video', icon: Clapperboard },
+  { name: 'Kontynuacja Video', icon: Film },
 ];
 
 export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
@@ -42,5 +42,6 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
     </header>
   );
 };
+
 
 

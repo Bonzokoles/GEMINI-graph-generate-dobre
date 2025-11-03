@@ -54,7 +54,7 @@ export const VideoContinuationTab: React.FC<VideoContinuationTabProps> = ({ veoC
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!prompt) {
-      setError('Please enter a prompt to continue the video.');
+      setError('Proszê wpisaæ opis to continue the video.');
       return;
     }
     if (!veoContext) {
@@ -135,7 +135,7 @@ export const VideoContinuationTab: React.FC<VideoContinuationTabProps> = ({ veoC
             id="continue-prompt"
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
-            placeholder="e.g., The cat looks surprised as a UFO appears in the sky"
+            placeholder="np., The cat looks surprised as a UFO appears in the sky"
             className="w-full p-3 bg-gray-800 border-2 border-gray-700 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-colors"
             rows={3}
           />
@@ -161,4 +161,5 @@ export const VideoContinuationTab: React.FC<VideoContinuationTabProps> = ({ veoC
     </div>
   );
 };
+
 
