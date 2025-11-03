@@ -1,12 +1,11 @@
-﻿@import '../fonts.css';
+@import '../fonts.css';
+@import './themes.css';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import './themes.css';
-
 body {
-    @apply bg-theme-primary text-theme-text transition-colors duration-300;
+    @apply bg-theme-primary text-theme-text transition-colors duration-300;  
     font-family: 'Steelfish', system-ui, -apple-system, sans-serif;
 }
