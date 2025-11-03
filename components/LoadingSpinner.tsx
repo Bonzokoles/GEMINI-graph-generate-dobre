@@ -9,8 +9,9 @@ interface LoadingSpinnerProps {
 export const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({ message }) => {
   return (
     <div className="flex flex-col items-center justify-center space-y-2 text-gray-400">
-      <Loader className="animate-spin h-8 w-8 text-purple-500" />
+      <Loader className="animate-spin h-8 w-8 text-blue-500" />
       {message && <p className="text-sm">{message}</p>}
     </div>
   );
 };
+

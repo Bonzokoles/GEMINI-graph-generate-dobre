@@ -62,12 +62,12 @@ export const ImageUpload: React.FC<ImageUploadProps> = ({ onFileUpload, uploaded
         <label
           onDrop={handleDrop}
           onDragOver={handleDragOver}
-          className="flex justify-center w-full h-48 px-4 transition bg-gray-800 border-2 border-gray-600 border-dashed rounded-md appearance-none cursor-pointer hover:border-purple-500 focus:outline-none"
+          className="flex justify-center w-full h-48 px-4 transition bg-gray-800 border-2 border-gray-600 border-dashed rounded-md appearance-none cursor-pointer hover:border-blue-500 focus:outline-none"
         >
           <span className="flex items-center space-x-2">
             <UploadCloud className="text-gray-500" />
             <span className="font-medium text-gray-500">
-              Drop an image, or <span className="text-purple-400 underline">browse</span>
+              Drop an image, or <span className="text-blue-400 underline">browse</span>
             </span>
           </span>
           <input type="file" name="file_upload" className="hidden" accept="image/*" onChange={handleFileChange} />
@@ -76,3 +76,4 @@ export const ImageUpload: React.FC<ImageUploadProps> = ({ onFileUpload, uploaded
     </div>
   );
 };
+

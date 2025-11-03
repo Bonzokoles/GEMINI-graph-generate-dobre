@@ -19,7 +19,7 @@ export const GeneratedMedia: React.FC<GeneratedMediaProps> = ({ url, type, alt }
       <a
         href={url}
         download={`generated-${type}-${Date.now()}`}
-        className="absolute bottom-4 right-4 bg-black/60 text-white p-2 rounded-full hover:bg-purple-600 transition-all opacity-0 group-hover:opacity-100"
+        className="absolute bottom-4 right-4 bg-black/60 text-white p-2 rounded-full hover:bg-blue-600 transition-all opacity-0 group-hover:opacity-100"
         aria-label="Download media"
       >
         <Download size={20} />
@@ -27,3 +27,4 @@ export const GeneratedMedia: React.FC<GeneratedMediaProps> = ({ url, type, alt }
     </div>
   );
 };
+

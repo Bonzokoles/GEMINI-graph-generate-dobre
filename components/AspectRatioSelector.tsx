@@ -19,7 +19,7 @@ export const AspectRatioSelector = <T extends string>({ value, onChange, options
             type="button"
             onClick={() => onChange(ratio)}
             className={`px-3 py-2 text-xs font-semibold rounded-md transition-colors ${
-              value === ratio ? 'bg-purple-600 text-white' : 'bg-gray-700 hover:bg-gray-600'
+              value === ratio ? 'bg-blue-600 text-white' : 'bg-gray-700 hover:bg-gray-600'
             }`}
           >
             {ratio}
@@ -29,3 +29,4 @@ export const AspectRatioSelector = <T extends string>({ value, onChange, options
     </div>
   );
 };
+

@@ -136,7 +136,7 @@ export const VideoContinuationTab: React.FC<VideoContinuationTabProps> = ({ veoC
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
             placeholder="e.g., The cat looks surprised as a UFO appears in the sky"
-            className="w-full p-3 bg-gray-800 border-2 border-gray-700 rounded-lg focus:ring-purple-500 focus:border-purple-500 transition-colors"
+            className="w-full p-3 bg-gray-800 border-2 border-gray-700 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-colors"
             rows={3}
           />
         </div>
@@ -144,7 +144,7 @@ export const VideoContinuationTab: React.FC<VideoContinuationTabProps> = ({ veoC
         <button
           type="submit"
           disabled={isLoading}
-          className="w-full flex items-center justify-center bg-purple-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-purple-700 transition-colors disabled:bg-gray-600 disabled:cursor-not-allowed"
+          className="w-full flex items-center justify-center bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors disabled:bg-gray-600 disabled:cursor-not-allowed"
         >
           {isLoading ? <LoadingSpinner message={loadingMessage} /> : <><Film className="mr-2" size={18} /> Continue Video</>}
         </button>
@@ -161,3 +161,4 @@ export const VideoContinuationTab: React.FC<VideoContinuationTabProps> = ({ veoC
     </div>
   );
 };
+

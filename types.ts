@@ -16,3 +16,4 @@ export interface VeoOperationContext {
     operation: GetVideosOperationResponse;
     prompt: string;
 }
+

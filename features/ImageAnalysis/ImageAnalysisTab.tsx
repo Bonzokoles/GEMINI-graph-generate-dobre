@@ -45,7 +45,7 @@ export const ImageAnalysisTab: React.FC = () => {
         <button
           type="submit"
           disabled={isLoading || !uploadedFile}
-          className="w-full flex items-center justify-center bg-purple-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-purple-700 transition-colors disabled:bg-gray-600 disabled:cursor-not-allowed"
+          className="w-full flex items-center justify-center bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors disabled:bg-gray-600 disabled:cursor-not-allowed"
         >
           {isLoading ? <LoadingSpinner message="Analyzing..." /> : <><ScanSearch className="mr-2" size={18}/> Analyze Image</>}
         </button>
@@ -62,3 +62,4 @@ export const ImageAnalysisTab: React.FC = () => {
     </div>
   );
 };
+
