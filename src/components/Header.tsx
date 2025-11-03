@@ -10,11 +10,11 @@ interface HeaderProps {
 }
 
 const TABS: { name: FeatureTab; icon: React.ElementType }[] = [
-  { name: 'Image Generation', icon: Image },
-  { name: 'Image Editing', icon: BotMessageSquare },
-  { name: 'Image Analysis', icon: ScanSearch },
-  { name: 'Video Generation', icon: Clapperboard },
-  { name: 'Video Continuation', icon: Film },
+  { name: 'Generowanie Obrazów', icon: Image },
+  { name: 'Edycja Obrazów', icon: BotMessageSquare },
+  { name: 'Analiza Obrazów', icon: ScanSearch },
+  { name: 'Generowanie Video', icon: Clapperboard },
+  { name: 'Kontynuacja Video', icon: Film },
 ];
 
 export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab, children }) => {
@@ -23,7 +23,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab, childre
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between py-4">
           <h1 className="text-2xl md:text-3xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-theme-accent to-theme-accent-alt mb-4 md:mb-0">
-            Creative AI Studio
+            ZENON_e_ART_h AI STUDIO
           </h1>
           <div className="flex items-center gap-4">
             <nav className="flex flex-wrap justify-center items-center gap-2">
@@ -39,7 +39,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab, childre
               ))}
             </nav>
             <div className="hidden md:block">
-                {children}
+              {children}
             </div>
           </div>
         </div>

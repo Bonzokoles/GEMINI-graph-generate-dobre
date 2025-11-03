@@ -1,4 +1,4 @@
-export type FeatureTab = 'Image Generation' | 'Image Editing' | 'Image Analysis' | 'Video Generation' | 'Video Continuation';
+export type FeatureTab = 'Generowanie Obrazów' | 'Edycja Obrazów' | 'Analiza Obrazów' | 'Generowanie Video' | 'Kontynuacja Video';
 
 export type AspectRatio = '1:1' | '16:9' | '9:16' | '4:3' | '3:4';
 export type VideoAspectRatio = '16:9' | '9:16';
@@ -10,6 +10,6 @@ export interface UploadedFile {
 }
 
 export interface VeoOperationContext {
-    operation: any; // GetVideosOperationResponse is not exported from @google/genai
-    prompt: string;
+  operation: any; // GetVideosOperationResponse is not exported from @google/genai
+  prompt: string;
 }
