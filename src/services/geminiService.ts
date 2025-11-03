@@ -15,10 +15,11 @@ export const fileToBase64 = (file: File): Promise<{ base64: string, mimeType: st
 };
 
 const getGenAI = () => {
-    if (!process.env.API_KEY) {
-        throw new Error("API_KEY environment variable not set");
-    }
-    return new GoogleGenAI({ apiKey: process.env.API_KEY });
+  const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+  if (!apiKey) {
+    throw new Error("VITE_GEMINI_API_KEY environment variable not set");
+  }
+  return new GoogleGenAI({ apiKey });
 }
 
 // --- IMAGE SERVICES ---
@@ -104,39 +105,40 @@ export const generateVideo = async (prompt: string, aspectRatio: VideoAspectRati
 };
 
 export const extendVideo = async (prompt: string, previousOperation: any) => {
-    const ai = getGenAI();
-    const video = previousOperation.response?.generatedVideos?.[0]?.video;
-    if (!video) throw new Error("Previous video data not found.");
+  const ai = getGenAI();
+  const video = previousOperation.response?.generatedVideos?.[0]?.video;
+  if (!video) throw new Error("Previous video data not found.");
 
-    let operation = await ai.models.generateVideos({
-        model: 'veo-3.1-generate-preview',
-        prompt,
-        video,
-        config: {
-            numberOfVideos: 1,
-            resolution: '720p',
-            aspectRatio: video.aspectRatio,
-        },
-    });
-    return operation;
+  let operation = await ai.models.generateVideos({
+    model: 'veo-3.1-generate-preview',
+    prompt,
+    video,
+    config: {
+      numberOfVideos: 1,
+      resolution: '720p',
+      aspectRatio: video.aspectRatio,
+    },
+  });
+  return operation;
 };
 
 
 export const pollVideoOperation = async (operation: any) => {
-    const ai = getGenAI();
-    let currentOperation = operation;
-    while (!currentOperation.done) {
-        await new Promise(resolve => setTimeout(resolve, 10000)); // Poll every 10 seconds
-        currentOperation = await ai.operations.getVideosOperation({ operation: currentOperation });
-    }
-    return currentOperation;
+  const ai = getGenAI();
+  let currentOperation = operation;
+  while (!currentOperation.done) {
+    await new Promise(resolve => setTimeout(resolve, 10000)); // Poll every 10 seconds
+    currentOperation = await ai.operations.getVideosOperation({ operation: currentOperation });
+  }
+  return currentOperation;
 };
 
 export const getVideoUrl = async (uri: string): Promise<string> => {
-    if (!process.env.API_KEY) {
-        throw new Error("API_KEY environment variable not set");
-    }
-    const response = await fetch(`${uri}&key=${process.env.API_KEY}`);
-    const blob = await response.blob();
-    return URL.createObjectURL(blob);
+  const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+  if (!apiKey) {
+    throw new Error("VITE_GEMINI_API_KEY environment variable not set");
+  }
+  const response = await fetch(`${uri}&key=${apiKey}`);
+  const blob = await response.blob();
+  return URL.createObjectURL(blob);
 };
